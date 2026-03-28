@@ -5,7 +5,7 @@
 In this assignment, I used the following AI tools:
 
 - ChatGPT – to help me understand concepts, debug code, and improve my design
-- GitHub Copilot (optional if used) – to suggest small code snippets while coding
+- GitHub Copilot – to suggest small code snippets while coding
 
 ---
 
