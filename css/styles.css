@@ -40,7 +40,7 @@ body{
 }
 
 /* ====== Nav ====== */
-.nav{
+.nav {
   position: sticky;
   top: 0;
   z-index: 10;
@@ -48,6 +48,8 @@ body{
   background: var(--bg);
   backdrop-filter: blur(10px);
   padding: 12px 0;
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -60,11 +62,6 @@ body{
 
 
 
-
-.nav{
-  display: flex;
-  justify-content: center;
-}
 .nav > *{
   width: min(1100px, 92%);
   display: flex;
@@ -72,10 +69,20 @@ body{
   justify-content: space-between;
   gap: 14px;
 }
+
 .nav-links{
   display: flex;
   align-items: center;
   gap: 14px;
+}
+
+.nav-links a{
+  text-decoration: none;
+  color: var(--text);
+  opacity: 0.9;
+  position: relative;
+  padding-bottom: 4px;
+  transition: 0.3s ease;
 }
 
 /* ====== Hero ====== */
@@ -378,23 +385,7 @@ font-weight: 500; }
 /* Responsive adjustments for tablet and mobile screens */
 
 
-@media (max-width: 520px){
-  .nav > *{
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .nav-links{
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .nav-links a{
-    display: inline-block;
-    font-size: 14px;
-  }
-
+@media (max-width: 768px){
   .two{
     grid-template-columns: 1fr;
   }
@@ -422,6 +413,33 @@ font-weight: 500; }
   .filter-btn {
     font-size: 14px;
     padding: 12px 16px;
+  }
+}
+
+/* Fix for Mobile Header */
+@media (max-width: 600px) {
+  /* This ensures the main nav container stays horizontal */
+  .nav > * {
+    flex-direction: row; 
+    flex-wrap: nowrap; /* Prevents items from jumping to a new line */
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  /* This keeps the links side-by-side */
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 8px; /* Reduced gap to fit smaller screens */
+  }
+
+  .nav-links a {
+    font-size: 13px; /* Slightly smaller text for mobile */
+  }
+
+  .nav .brand {
+    font-size: 16px; /* Shrink brand name to save space */
+    white-space: nowrap;
   }
 }
 
